@@ -1,0 +1,457 @@
+-------------------------------------
+NUMBER OF CATEGORIES WON BY EACH TEAM
+-------------------------------------
+          MURRAYMIRON 6 
+            TAMERZONE 5 
+            pennaiken 3 
+               KUBQR1 2 
+             Intuidex 1 
+       BATESANALYTICS 1 
+             ANDY_NIJ 2
+
+			 
+------------------------
+PAI SCORES BY TIME FRAME
+------------------------
+  * An asterisk indicates the entry failed to comply with contest submission requirements
+
+
+ACFS 1WK:
+         MURRAYMIRON (acfs 1WK): 81.1479941258 [hits: 100, num_crimes: 00723, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_ACFS_1WK.shp}
+           TAMERZONE (acfs 1WK): 76.9435727067 [hits: 095, num_crimes: 00723, forecast_area: 7031896.682813, total_map_area: 4117745688.532486] {TAMERZONE_ACFS_1WK.shp}
+*    WILLIAMHERLANDS (acfs 1WK): 52.2082621228 [hits: 066, num_crimes: 00723, forecast_area: 7200000.000031, total_map_area: 4117808019.815295] {WILLIAMHERLANDS_ACFS_1WK.shp}
+
+ACFS 2WK:
+         MURRAYMIRON (acfs 2WK): 78.4244938894 [hits: 185, num_crimes: 01384, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_ACFS_2WK.shp}
+           TAMERZONE (acfs 2WK): 75.7782740063 [hits: 179, num_crimes: 01384, forecast_area: 7028000.000000, total_map_area: 4117745688.532486] {TAMERZONE_ACFS_2WK.shp}
+            Intuidex (acfs 2WK): 50.2715103002 [hits: 118, num_crimes: 01384, forecast_area: 6983284.594461, total_map_area: 4117520377.733733] {Intuidex_ACFS_2WK.shp}
+
+ACFS 1MO:
+         MURRAYMIRON (acfs 1MO): 78.7645707227 [hits: 410, num_crimes: 03054, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_ACFS_1MO.shp}
+           TAMERZONE (acfs 1MO): 72.6703441987 [hits: 379, num_crimes: 03054, forecast_area: 7031896.682813, total_map_area: 4117745688.532486] {TAMERZONE_ACFS_1MO.shp}
+            Intuidex (acfs 1MO): 48.0735650761 [hits: 249, num_crimes: 03054, forecast_area: 6983284.594461, total_map_area: 4117520377.733733] {Intuidex_ACFS_1MO.shp}
+
+ACFS 2MO:
+         MURRAYMIRON (acfs 2MO): 74.9757881206 [hits: 778, num_crimes: 06088, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_ACFS_2MO.shp}
+           TAMERZONE (acfs 2MO): 70.7359944741 [hits: 735, num_crimes: 06088, forecast_area: 7028000.000000, total_map_area: 4117745688.532486] {TAMERZONE_ACFS_2MO.shp}
+            Intuidex (acfs 2MO): 49.3936978384 [hits: 510, num_crimes: 06088, forecast_area: 6983284.712996, total_map_area: 4117520377.733733] {Intuidex_ACFS_2MO.shp}
+
+ACFS 3MO:
+         MURRAYMIRON (acfs 3MO): 74.8770127395 [hits: 1222, num_crimes: 09575, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_ACFS_3MO.shp}
+           TAMERZONE (acfs 3MO): 71.9209771133 [hits: 1176, num_crimes: 09575, forecast_area: 7031896.682813, total_map_area: 4117745688.532486] {TAMERZONE_ACFS_3MO.shp}
+            Intuidex (acfs 3MO): 49.6331989857 [hits: 806, num_crimes: 09575, forecast_area: 6983284.712996, total_map_area: 4117520377.733733] {Intuidex_ACFS_3MO.shp}
+
+SC 1WK:
+         MURRAYMIRON (sc 1WK): 91.5628734483 [hits: 098, num_crimes: 00630, forecast_area: 6996671.833425, total_map_area: 4118370284.850512] {MURRAYMIRON_SC_1WK.shp}
+*    WILLIAMHERLANDS (sc 1WK): 67.4962018585 [hits: 074, num_crimes: 00630, forecast_area: 7166018.589646, total_map_area: 4117808019.815295] {WILLIAMHERLANDS_SC_1WK.shp}
+
+SC 2WK:
+           TAMERZONE (sc 2WK): 89.3919237395 [hits: 184, num_crimes: 01206, forecast_area: 7028000.000000, total_map_area: 4117745688.532486] {TAMERZONE_SC_2WK.shp}
+         MURRAYMIRON (sc 2WK): 86.8773532719 [hits: 178, num_crimes: 01206, forecast_area: 6996671.833425, total_map_area: 4118370284.850512] {MURRAYMIRON_SC_2WK.shp}
+      BATESANALYTICS (sc 2WK): 71.8675132833 [hits: 152, num_crimes: 01206, forecast_area: 7221086.413793, total_map_area: 4117549984.593208] {BATESANALYTICS_SC_2WK.shp}
+
+SC 1MO:
+           TAMERZONE (sc 1MO): 89.2497043807 [hits: 409, num_crimes: 02685, forecast_area: 7028000.000000, total_map_area: 4117745688.532486] {TAMERZONE_SC_1MO.shp}
+         MURRAYMIRON (sc 1MO): 86.8130037164 [hits: 396, num_crimes: 02685, forecast_area: 6996671.833425, total_map_area: 4118370284.850512] {MURRAYMIRON_SC_1MO.shp}
+            Intuidex (sc 1MO): 59.7311151504 [hits: 272, num_crimes: 02685, forecast_area: 6983284.703822, total_map_area: 4117520377.733733] {Intuidex_SC_1MO.shp}
+
+SC 2MO:
+           TAMERZONE (sc 2MO): 84.1686867441 [hits: 771, num_crimes: 05367, forecast_area: 7028000.000000, total_map_area: 4117745688.532486] {TAMERZONE_SC_2MO.shp}
+         MURRAYMIRON (sc 2MO): 81.7068682253 [hits: 745, num_crimes: 05367, forecast_area: 6996671.833425, total_map_area: 4118370284.850512] {MURRAYMIRON_SC_2MO.shp}
+        STEVENYURICK (sc 2MO): 59.9992926231 [hits: 547, num_crimes: 05367, forecast_area: 6995223.064739, total_map_area: 4118053334.553020] {STEVENYURICK_SC_2MO.shp}
+
+SC 3MO:
+           TAMERZONE (sc 3MO): 83.7599128902 [hits: 1215, num_crimes: 08499, forecast_area: 7028000.000000, total_map_area: 4117745688.532486] {TAMERZONE_SC_3MO.shp}
+         MURRAYMIRON (sc 3MO): 81.5851935773 [hits: 1178, num_crimes: 08499, forecast_area: 6996671.833425, total_map_area: 4118370284.850512] {MURRAYMIRON_SC_3MO.shp}
+      BATESANALYTICS (sc 3MO): 64.6092585825 [hits: 963, num_crimes: 08499, forecast_area: 7221087.050609, total_map_area: 4117549984.593208] {BATESANALYTICS_SC_3MO.shp}
+        STEVENYURICK (sc 3MO): 60.6080934932 [hits: 875, num_crimes: 08499, forecast_area: 6995223.064739, total_map_area: 4118053334.553020] {STEVENYURICK_SC_3MO.shp}
+
+TOA 1WK:
+           pennaiken (toa 1WK): 32.6097566031 [hits: 004, num_crimes: 00072, forecast_area: 7015186.461604, total_map_area: 4117743414.693521] {pennaiken_TOA_1WK.shp}
+         MURRAYMIRON (toa 1WK): 16.2972221536 [hits: 002, num_crimes: 00072, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_TOA_1WK.shp}
+
+TOA 2WK:
+           pennaiken (toa 2WK): 60.4239607646 [hits: 014, num_crimes: 00136, forecast_area: 7015186.461604, total_map_area: 4117743414.693521] {pennaiken_TOA_2WK.shp}
+         MURRAYMIRON (toa 2WK): 34.5117645606 [hits: 008, num_crimes: 00136, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_TOA_2WK.shp}
+               TADIC (toa 2WK): 33.6402282375 [hits: 008, num_crimes: 00136, forecast_area: 7200000.000000, total_map_area: 4117563936.266025] {TADIC_TOA_2WK.shp}
+
+TOA 1MO:
+           pennaiken (toa 1MO): 46.9580495085 [hits: 022, num_crimes: 00275, forecast_area: 7015186.461604, total_map_area: 4117743414.693521] {pennaiken_TOA_1MO.shp}
+         MURRAYMIRON (toa 1MO): 29.8683635106 [hits: 014, num_crimes: 00275, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_TOA_1MO.shp}
+               TADIC (toa 1MO): 18.7161997103 [hits: 009, num_crimes: 00275, forecast_area: 7200000.000000, total_map_area: 4117563936.266025] {TADIC_TOA_1MO.shp}
+
+TOA 2MO:
+           TAMERZONE (toa 2MO): 42.0483417737 [hits: 039, num_crimes: 00545, forecast_area: 7007752.456866, total_map_area: 4117745688.532486] {TAMERZONE_TOA_2MO.shp}
+         MURRAYMIRON (toa 2MO): 26.9128439234 [hits: 025, num_crimes: 00545, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_TOA_2MO.shp}
+               TADIC (toa 2MO): 19.9372361848 [hits: 019, num_crimes: 00545, forecast_area: 7200000.000000, total_map_area: 4117563936.266025] {TADIC_TOA_2MO.shp}
+
+TOA 3MO:
+              KUBQR1 (toa 3MO): 39.2559534927 [hits: 054, num_crimes: 00807, forecast_area: 7019221.801470, total_map_area: 4117885544.197185] {KUBQR1_TOA_3MO.shp}
+         MURRAYMIRON (toa 3MO): 25.4454769684 [hits: 035, num_crimes: 00807, forecast_area: 7019550.540638, total_map_area: 4118370284.850512] {MURRAYMIRON_TOA_3MO.shp}
+                 PTL (toa 3MO): 19.8427589350 [hits: 028, num_crimes: 00807, forecast_area: 7200000.000000, total_map_area: 4117655946.992237] {PTL_TOA_3MO.shp}
+
+BURG 1WK:
+            Intuidex (burg 1WK): 28.0444467707 [hits: 001, num_crimes: 00021, forecast_area: 6991839.769974, total_map_area: 4117727843.430601] {Intuidex_Burg_1WK.shp}
+            GRANTHAM (burg 1WK): 28.0122960768 [hits: 001, num_crimes: 00021, forecast_area: 7000000.000036, total_map_area: 4117807523.304117] {GRANTHAM_Burg_1WK.shp}
+         MURRAYMIRON (burg 1WK): 27.9393945380 [hits: 001, num_crimes: 00021, forecast_area: 7019224.072322, total_map_area: 4118370284.850512] {MURRAYMIRON_BURG_1WK.shp}
+*   DYLANFITZPATRICK (burg 1WK): 27.2325656917 [hits: 001, num_crimes: 00021, forecast_area: 7199999.999982, total_map_area: 4117563932.569651] {DYLANFITZPATRICK_Burg_1WK.shp}
+*               CUDY (burg 1WK): 21.7840878250 [hits: 001, num_crimes: 00021, forecast_area: 9000000.000000, total_map_area: 4117192598.918649] {CUDY_BURG_1WK.shp}
+             AltMaps (burg 1WK): 10.1101091962 [hits: 001, num_crimes: 00021, forecast_area: 19395087.914899, total_map_area: 4117815590.485795] {AltMaps_Burg_1WK.shp}
+              RAPTOR (burg 1WK): 9.8322260462 [hits: 001, num_crimes: 00021, forecast_area: 19940737.682141, total_map_area: 4117298648.775215] {RAPTOR_Burg_1WK.shp}
+              KOONTZ (burg 1WK): 9.4504953174 [hits: 001, num_crimes: 00021, forecast_area: 20749999.999990, total_map_area: 4118053334.552965] {KOONTZ_Burg_1WK.shp}
+                 PTL (burg 1WK): 9.3907497423 [hits: 001, num_crimes: 00021, forecast_area: 20880000.000000, total_map_area: 4117655946.992239] {PTL_Burg_1WK.shp}
+
+BURG 2WK:
+      BATESANALYTICS (burg 2WK): 28.0061618302 [hits: 002, num_crimes: 00042, forecast_area: 7001095.329626, total_map_area: 4117549984.593208] {BATESANALYTICS_BURG_2WK.shp}
+*   DYLANFITZPATRICK (burg 2WK): 27.2341800252 [hits: 002, num_crimes: 00042, forecast_area: 7199999.999997, total_map_area: 4117808019.815295] {DYLANFITZPATRICK_Burg_2WK.shp}
+         MURRAYMIRON (burg 2WK): 13.9696972690 [hits: 001, num_crimes: 00042, forecast_area: 7019224.072322, total_map_area: 4118370284.850512] {MURRAYMIRON_BURG_2WK.shp}
+
+BURG 1MO:
+            ANDY_NIJ (burg 1MO): 31.1883950479 [hits: 005, num_crimes: 00094, forecast_area: 7022878.693604, total_map_area: 4117807523.304117] {ANDY_NIJ_Burg_1MO.shp}
+         MURRAYMIRON (burg 1MO): 18.7253388925 [hits: 003, num_crimes: 00094, forecast_area: 7019224.072322, total_map_area: 4118370284.850512] {MURRAYMIRON_BURG_1MO.shp}
+      BATESANALYTICS (burg 1MO): 12.1332362888 [hits: 002, num_crimes: 00094, forecast_area: 7220451.691136, total_map_area: 4117549984.593208] {BATESANALYTICS_BURG_1MO.shp}
+
+BURG 2MO:
+            ANDY_NIJ (burg 2MO): 16.6574382642 [hits: 005, num_crimes: 00176, forecast_area: 7022878.693604, total_map_area: 4117807523.304117] {ANDY_NIJ_Burg_2MO.shp}
+         MURRAYMIRON (burg 2MO): 10.0010332721 [hits: 003, num_crimes: 00176, forecast_area: 7019224.072322, total_map_area: 4118370284.850512] {MURRAYMIRON_BURG_2MO.shp}
+      BATESANALYTICS (burg 2MO): 9.7991193691 [hits: 003, num_crimes: 00176, forecast_area: 7162430.465132, total_map_area: 4117549984.593208] {BATESANALYTICS_BURG_2MO.shp}
+
+BURG 3MO:
+              KUBQR1 (burg 3MO): 17.4187629682 [hits: 008, num_crimes: 00269, forecast_area: 7030636.895430, total_map_area: 4117885544.197185] {KUBQR1_BURG_3MO.shp}
+      BATESANALYTICS (burg 3MO): 12.8226302651 [hits: 006, num_crimes: 00269, forecast_area: 7162435.607864, total_map_area: 4117549984.593208] {BATESANALYTICS_BURG_3MO.shp}
+         MURRAYMIRON (burg 3MO): 8.7245692981 [hits: 004, num_crimes: 00269, forecast_area: 7019224.072322, total_map_area: 4118370284.850512] {MURRAYMIRON_BURG_3MO.shp}
+
+
+---------------------------
+COMPLIANCE WITH ENTRY RULES
+---------------------------
+
+AltMaps (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+ANDY_NIJ (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+ANDY_NIJ (burg 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+BATESANALYTICS (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+BATESANALYTICS (burg 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+BATESANALYTICS (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+BATESANALYTICS (burg 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+BATESANALYTICS (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+BATESANALYTICS (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+CCC (toa 1WK) tests:
+ forecasted area: !! FAIL !!  0
+ total map area:  PASS
+ max cell size:   PASS
+
+CUDY (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  423172.50385736814
+
+DYLANFITZPATRICK (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.00001335144
+
+DYLANFITZPATRICK (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.00001335144
+
+GRANTHAM (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Intuidex (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Intuidex (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TADIC (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (sc 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Intuidex (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Intuidex (acfs 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Intuidex (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Intuidex (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+KOONTZ (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+KUBQR1 (burg 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+KUBQR1 (toa 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (acfs 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (burg 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (burg 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (sc 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (sc 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (toa 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (toa 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MURRAYMIRON (toa 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+pennaiken (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+pennaiken (toa 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+pennaiken (toa 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PTL (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PTL (toa 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+RAPTOR (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+STEVENYURICK (sc 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+STEVENYURICK (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TADIC (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TADIC (toa 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (acfs 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TAMERZONE (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WILLIAMHERLANDS (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.00001335144
+
+WILLIAMHERLANDS (sc 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.00001335144
