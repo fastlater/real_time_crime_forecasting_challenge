@@ -20,7 +20,7 @@ Errata
 ======
 - The area formula used is only accurate for polygons which do not have edges that intersect.
 - CCC didn't score 0, but they mistakenly named their hotspots "hotpsots" so the report shown here is inaccurate.  They did win that category, if you ignore the typo.
-
+- The reports are based on files that were downloaded on or about September 1, 2017.
 
 Dependencies
 ============
