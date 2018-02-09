@@ -4,7 +4,7 @@ National Institute of Justice's Real-Time Crime Forecasting Challenge
 
 $1.2 million dollars, of which I received $11,111.11.  According to me, they scored it incorrectly; a review of their BASIC macros suggests that they're using ArcGIS functions.  I do not have a license for that software, and as such, am unable to verify that their provided scoring script results in the numbers they posted.
 
-These are simple Ruby scripts to score the submissions; I don't care enough to make sure they work in anybody else's environment, and I wrote them as a quick-and-dirty means to an end, but here they are.  Note that I am not an employee of the Department of Justice, and you should draw your own conclusions.  All information contained herein is based on my own program, which makes use of [shapelib](http://shapelib.maptools.org/), an open source C library for ArcGIS format files.
+These are simple Ruby scripts to score the submissions; I don't care enough to make sure they work in anybody else's environment, and I wrote them as a quick-and-dirty means to an end, but here they are.  Note that I am not an employee of the Department of Justice, and you should draw your own conclusions.  All information contained herein is based on my own program, which makes use of [shapelib](http://shapelib.maptools.org/), an open source C library for ArcGIS format files.  Note that if my scoring of the contest is incorrect, I take full responsibility for the error, even if [shapelib](http://shapelib.maptools.org/) has a bug (it's rock solid in my experience, but regardless, it seems appropriate to state that.)
 
 
 Why is this here?
