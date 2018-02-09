@@ -1,0 +1,290 @@
+LEDRAY (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+LEDRAY (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+LEDRAY (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+LEDRAY (burg 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+SCARBOROUGH (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+SCARBOROUGH (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+SCARBOROUGH (toa 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (burg 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (sc 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (sc 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (toa 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+WARREN (toa 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (acfs 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (sc 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+YURICK (toa 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+ACFS 1WK:
+---------
+              WARREN (acfs 1WK): 77.9907787188 [hits: 096, num_crimes: 00723, forecast_area: 7010453.923657, total_map_area: 4117716666.359891] {WARREN_ACFS_1WK.shp}
+              YURICK (acfs 1WK): 49.0182801890 [hits: 071, num_crimes: 00723, forecast_area: 8249999.999888, total_map_area: 4118053334.553020] {YURICK_ACFS_1WK.shp}
+
+ACFS 2WK:
+---------
+              WARREN (acfs 2WK): 78.0893942266 [hits: 184, num_crimes: 01384, forecast_area: 7010453.923657, total_map_area: 4117716666.359891] {WARREN_ACFS_2WK.shp}
+              YURICK (acfs 2WK): 51.2141858044 [hits: 142, num_crimes: 01384, forecast_area: 8249999.999888, total_map_area: 4118053334.553020] {YURICK_ACFS_2WK.shp}
+
+ACFS 1MO:
+---------
+              WARREN (acfs 1MO): 77.7002924359 [hits: 404, num_crimes: 03054, forecast_area: 7010453.923657, total_map_area: 4117716666.359891] {WARREN_ACFS_1MO.shp}
+              YURICK (acfs 1MO): 48.3794243831 [hits: 296, num_crimes: 03054, forecast_area: 8249999.999888, total_map_area: 4118053334.553020] {YURICK_ACFS_1MO.shp}
+
+ACFS 2MO:
+---------
+              WARREN (acfs 2MO): 59.0299435273 [hits: 971, num_crimes: 09575, forecast_area: 7073262.485409, total_map_area: 4117292254.911778] {WARREN_ACFS_2MO.shp}
+              YURICK (acfs 2MO): 46.9182435465 [hits: 900, num_crimes: 09575, forecast_area: 8249999.999888, total_map_area: 4118053334.553020] {YURICK_ACFS_2MO.shp}
+
+ACFS 3MO:
+---------
+              YURICK (acfs 3MO): 46.9182435465 [hits: 900, num_crimes: 09575, forecast_area: 8249999.999888, total_map_area: 4118053334.553020] {YURICK_ACFS_3MO.shp}
+
+SC 1WK:
+---------
+              WARREN (sc 1WK): 92.3334029756 [hits: 099, num_crimes: 00630, forecast_area: 7007970.474429, total_map_area: 4117716666.359891] {WARREN_SC_1WK.shp}
+              YURICK (sc 1WK): 59.4235690425 [hits: 075, num_crimes: 00630, forecast_area: 8249999.999821, total_map_area: 4118053334.553020] {YURICK_SC_1WK.shp}
+
+SC 2WK:
+---------
+              WARREN (sc 2WK): 95.0061021119 [hits: 195, num_crimes: 01206, forecast_area: 7007970.474429, total_map_area: 4117716666.359891] {WARREN_SC_2WK.shp}
+              YURICK (sc 2WK): 60.0148483364 [hits: 145, num_crimes: 01206, forecast_area: 8249999.999821, total_map_area: 4118053334.553020] {YURICK_SC_2WK.shp}
+
+SC 1MO:
+---------
+              WARREN (sc 1MO): 73.1401259483 [hits: 342, num_crimes: 02685, forecast_area: 7170291.308276, total_map_area: 4117282705.166957] {WARREN_SC_1MO.shp}
+              YURICK (sc 1MO): 58.0027149894 [hits: 312, num_crimes: 02685, forecast_area: 8249999.999821, total_map_area: 4118053334.553020] {YURICK_SC_1MO.shp}
+
+SC 2MO:
+---------
+              WARREN (sc 2MO): 73.6431838925 [hits: 1090, num_crimes: 08499, forecast_area: 7170291.308276, total_map_area: 4117282705.166957] {WARREN_SC_2MO.shp}
+
+SC 3MO:
+---------
+              WARREN (sc 3MO): 88.7690130330 [hits: 1284, num_crimes: 08499, forecast_area: 7007970.474429, total_map_area: 4117716666.359891] {WARREN_SC_3MO.shp}
+              YURICK (sc 3MO): 56.1471971807 [hits: 956, num_crimes: 08499, forecast_area: 8249999.999821, total_map_area: 4118053334.553020] {YURICK_SC_3MO.shp}
+
+TOA 1WK:
+---------
+              WARREN (toa 1WK): 24.0007385458 [hits: 003, num_crimes: 00072, forecast_area: 7147840.293393, total_map_area: 4117282705.166957] {WARREN_TOA_1WK.shp}
+
+TOA 2WK:
+---------
+              WARREN (toa 2WK): 69.0867857504 [hits: 016, num_crimes: 00136, forecast_area: 7012010.323021, total_map_area: 4117716666.359891] {WARREN_TOA_2WK.shp}
+         SCARBOROUGH (toa 2WK): 20.1865359537 [hits: 010, num_crimes: 00136, forecast_area: 15000000.000007, total_map_area: 4118053334.552965] {SCARBOROUGH_TOA_2WK.shp}
+
+TOA 1MO:
+---------
+              WARREN (toa 1MO): 42.5355388793 [hits: 020, num_crimes: 00275, forecast_area: 7040358.241695, total_map_area: 4117649686.065360] {WARREN_TOA_1MO.shp}
+              YURICK (toa 1MO): 22.9025426094 [hits: 013, num_crimes: 00275, forecast_area: 8499999.999969, total_map_area: 4118053334.553020] {YURICK_TOA_1MO.shp}
+
+TOA 2MO:
+---------
+              YURICK (toa 2MO): 21.0120076842 [hits: 035, num_crimes: 00807, forecast_area: 8499999.999969, total_map_area: 4118053334.553020] {YURICK_TOA_2MO.shp}
+              WARREN (toa 2MO): 14.1811418499 [hits: 058, num_crimes: 00807, forecast_area: 20866160.246693, total_map_area: 4117174560.427916] {WARREN_TOA_2MO.shp}
+
+TOA 3MO:
+---------
+              YURICK (toa 3MO): 21.0120076842 [hits: 035, num_crimes: 00807, forecast_area: 8499999.999969, total_map_area: 4118053334.553020] {YURICK_TOA_3MO.shp}
+
+BURG 1WK:
+---------
+              YURICK (burg 1WK): 0.0000000000 [hits: 000, num_crimes: 00021, forecast_area: 20750000.000036, total_map_area: 4118053334.553020] {YURICK_Burg_1WK.shp}
+              WARREN (burg 1WK): 0.0000000000 [hits: 000, num_crimes: 00021, forecast_area: 6977084.088583, total_map_area: 4117649686.065360] {WARREN_BURG_1WK.shp}
+         SCARBOROUGH (burg 1WK): 0.0000000000 [hits: 000, num_crimes: 00021, forecast_area: 11745223.064730, total_map_area: 4118053334.552965] {SCARBOROUGH_BURG_1WK.shp}
+              LEDRAY (burg 1WK): 0.0000000000 [hits: 000, num_crimes: 00021, forecast_area: 10800000.000000, total_map_area: 4117743414.691953] {LEDRAY_Burg_1WK.shp}
+
+BURG 2WK:
+---------
+              YURICK (burg 2WK): 0.0000000000 [hits: 000, num_crimes: 00042, forecast_area: 20750000.000036, total_map_area: 4118053334.553020] {YURICK_Burg_2WK.shp}
+              WARREN (burg 2WK): 0.0000000000 [hits: 000, num_crimes: 00042, forecast_area: 6977084.088583, total_map_area: 4117649686.065360] {WARREN_BURG_2WK.shp}
+         SCARBOROUGH (burg 2WK): 0.0000000000 [hits: 000, num_crimes: 00042, forecast_area: 11745223.064730, total_map_area: 4118053334.552965] {SCARBOROUGH_BURG_2WK.shp}
+              LEDRAY (burg 2WK): 0.0000000000 [hits: 000, num_crimes: 00042, forecast_area: 10800000.000000, total_map_area: 4117743414.691953] {LEDRAY_Burg_2WK.shp}
+
+BURG 1MO:
+---------
+              YURICK (burg 1MO): 4.2225617376 [hits: 002, num_crimes: 00094, forecast_area: 20750000.000036, total_map_area: 4118053334.553020] {YURICK_Burg_1MO.shp}
+              LEDRAY (burg 1MO): 4.0560908340 [hits: 001, num_crimes: 00094, forecast_area: 10800000.000000, total_map_area: 4117743414.691953] {LEDRAY_Burg_1MO.shp}
+
+BURG 2MO:
+---------
+              WARREN (burg 2MO): 4.3813833988 [hits: 002, num_crimes: 00269, forecast_area: 6986597.722359, total_map_area: 4117174560.427916] {WARREN_BURG_2MO.shp}
+
+BURG 3MO:
+---------
+              LEDRAY (burg 3MO): 7.0868501561 [hits: 005, num_crimes: 00269, forecast_area: 10800000.000000, total_map_area: 4117743414.691953] {LEDRAY_Burg_3MO.shp}
+
+
+ * An asterisk indicates the entry failed to comply with contest submission requirements

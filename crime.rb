@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'csv'
+#require 'date'
 require 'time'
 require_relative 'shapefile'
 
@@ -10,24 +11,128 @@ TOTAL_SQUARE_FEET = 4.117918e+9 if !defined?(TOTAL_SQUARE_FEET)
 TOTAL_SQUARE_FEET_WIGGLE_ROOM = 557568 if !defined?(TOTAL_SQUARE_FEET_WIGGLE_ROOM)
 #TOTAL_SQUARE_FEET = 4117804825.3198886
 
-class Entry
-  include Enumerable
-  attr_accessor :team, :timeframe, :score, :crimetype, :crimefile, :shapefile, :crimecoords
+class PaiCalculation
+  attr_accessor :n, :N, :a, :A
 
-  def initialize(team, timeframe = nil, crimetype = nil, score = nil)
-	@team, @timeframe, @crimetype, @score = team, timeframe, crimetype, score
+  def initialize(fn, fN, fa, fA)
+	@n, @N, @a, @A = fn, fN, fa, fA
+  end
+
+  def result
+	(@n.to_f / @N) / (@a.to_f / @A)
   end
 
   def to_s
-	"%25.25s (%s %s): %f" % [ @team, @crimetype, @timeframe, @score ]
+	sprintf("hits: %3.3d, num_crimes: %5.5d, forecast_area: %f, total_map_area: %f", @n, @N, @a, @A)
+  end
+end
+
+class Entry
+  include Enumerable
+  attr_accessor :team, :crimes, :timeframe, :score, :crimetype, :crimefile, :shapefile, :crimecoords, :pai_obj, :disqualified
+
+  def initialize(team, timeframe = nil, crimetype = nil, score = nil)
+	@team, @timeframe, @crimetype, @score = team, timeframe, crimetype, score
+	@disqualified = false
+  end
+
+  def to_s
+	if @disqualified
+	  ret = "* %18.18s (%s %s): %.10f [%s] {%s}" % [ @team, @crimetype, @timeframe, @score, @pai_obj.to_s, File.basename(@shapefile) ]
+	else
+	  ret = "%20.20s (%s %s): %.10f [%s] {%s}" % [ @team, @crimetype, @timeframe, @score.to_f, @pai_obj.to_s, File.basename(@shapefile) ]
+	end
+	ret
   end
 
   def <=>(other)
-	self.score <=> other.score
+	begin
+	  self.score <=> other.score
+	rescue
+	  -1
+	end
   end
 end
 
 module Crimes
+  @@start_time = Date.parse("1/3/2017")
+  @@end_times = [ Date.parse("7/3/2017"),
+	Date.parse("14/3/2017"),
+	Date.parse("31/3/2017"),
+	Date.parse("30/4/2017"),
+	Date.parse("31/5/2017"),
+  ]
+  @@crimearray = []
+
+  def wk1
+	i = 0
+	objs = self#@@crimearray
+	objs.find_all { |c|
+	  t = c.date.to_time
+	  t.between?(@@start_time.to_time, @@end_times[i].to_time)
+	}.extend(Crimes)
+  end
+
+  def wk2
+	i = 1
+	objs = self#@@crimearray
+	objs.find_all { |c|
+	  t = c.date.to_time
+	  t.between?(@@start_time.to_time, @@end_times[i].to_time)
+	}.extend(Crimes)
+  end
+
+  def mo1
+	i = 2
+	objs = self#@@crimearray
+	objs.find_all { |c|
+	  t = c.date.to_time
+	  t.between?(@@start_time.to_time, @@end_times[i].to_time)
+	}.extend(Crimes)
+  end
+
+  def mo2
+	i = 3
+	objs = self#@@crimearray
+	objs.find_all { |c|
+	  t = c.date.to_time
+#	  puts "start: %s, end: %s, i: %d" % [ @@start_time.to_time.to_s, @@end_times[i].to_time.to_s, i ]
+	  t.between?(@@start_time.to_time, @@end_times[i].to_time)
+	}.extend(Crimes)
+  end
+
+  def mo3
+	i = 4
+	objs = self#@@crimearray
+	objs.find_all { |c|
+	  t = c.date.to_time
+	  t.between?(@@start_time.to_time, @@end_times[i].to_time)
+	}.extend(Crimes)
+  end
+
+  def Crimes.read_csv(filename, timeframe = nil)
+	objs = Crime.read_csv(filename)
+	@@crimearray = objs.find_all { |c|
+	  t = c.date.to_time
+	  if timeframe == "1WK"
+		i = 0
+	  elsif timeframe == '2WK'
+		i = 1
+	  elsif timeframe == '1MO'
+		i = 2
+	  elsif timeframe == '2MO'
+		i = 3
+	  elsif timeframe == '3MO'
+		i = 4
+	  else
+		i = 4
+	  end
+	  t.between?(@@start_time.to_time, @@end_times[i].to_time)
+	}
+	@@crimearray.extend(Crimes)
+	@@crimearray
+  end
+
   def burg
 	ret = find_all { |crime| crime.kind_of? Burg }
 	ret.extend(Crimes)
@@ -44,6 +149,10 @@ module Crimes
 	ret = find_all { |crime| crime.kind_of? SC }
 	ret.extend(Crimes)
 	ret
+  end
+
+  def acfs
+	self.extend(Crimes)
   end
 
   def sort_by_coords!
@@ -175,16 +284,22 @@ module Crimes
 
   def Crimes.pai_score(hotspotsfile_name, crimefile_name, f_A = TOTAL_SQUARE_FEET, do_print = false)
 #	objects = SHP::Shapefile.read(shapefile_name)
-	if hotspotsfile_name.kind_of? Array
-	  objects = hotspotsfile_name
-	elsif hotspotsfile_name =~ /csv$/
+	if hotspotsfile_name =~ /csv$/
 	  objects = Crimes.hotspots_from_csv(hotspotsfile_name)
 	else
-	  objects = SHP::Shapefile.read(hotspotsfile_name).find_all { |shp| shp.hotspot?(hotspotsfile_name) }
+	  objects = hotspotsfile_name
+#	  objects = SHP::Shapefile.read(hotspotsfile_name).find_all { |shp| shp.hotspot?(hotspotsfile_name) }
 	end
-	crimes = Crime.read_csv(crimefile_name)
+	if File.exists?(crimefile_name.to_s)
+	  crimes = Crime.read_csv(crimefile_name)
+	else
+	  crimes = crimefile_name
+	  if crimes.first.kind_of?(Crime)
+		crimes = crimes.collect { |obj| [obj.x, obj.y] }
+	  end
+	end
 
-	crimecoords = crimes.collect { |c| [c.x, c.y] }
+	crimecoords = crimes.collect { |c| [c.first, c.last] }
 	f_n = 0
 	f_N = crimecoords.size
 	f_a = 0
@@ -203,54 +318,129 @@ module Crimes
 	  puts ("--------------------------")
 	  puts sprintf("%.1f / %.1f", f_a.to_f, f_A.to_f)
 	end
+	$last_pai = PaiCalculation.new(f_n, f_N, f_a, f_A)
 	(f_n.to_f / f_N) / (f_a.to_f / f_A)
   end
 
-  def Crimes.who_won(verbose = true)
+  def Crimes.get_entries(dir = 'nij_challenge/shapefiles/*.shp')
 	entries = []
-	files = Dir['nij_challenge/shapefiles/*.shp']
+#	objs = Crimes.read_csv("NIJ2017_MAR01_MAYR31.csv")
+	objs = Crimes.read_csv("crimes.csv")
+	files = Dir[dir]
 	files.each { |filename|
-	  team = File.basename(filename).slice(/[^_]+/)
+	  re_obj = Regexp.new("(.+)_(?:ACFS|SC|toa|burg)_(?:1WK|2WK|1MO|2MO|3MO)\.shp", Regexp::IGNORECASE)
+	  re_match = re_obj.match(File.basename(filename))
+	  next if !re_match
+	  team = re_match.captures.first
 	  entry = Entry.new(team)
 	  entry.shapefile = filename
 	  entry.timeframe = File.basename(filename).slice(/...\./)[0...-1]
-	  entry.crimetype = File.basename(filename).slice(/acfs|sc|toa|burg/i).downcase
+	  entry.crimetype = File.basename(filename).slice(/_acfs|_sc|_toa|_burg/i).sub("_", "").downcase
 	  if entry.timeframe == "1WK"
+		entry.crimes = objs.wk1
 		entry.crimefile = "NIJ2017_MAR01_MAR07-hot-"
 	  elsif entry.timeframe == "2WK"
+		entry.crimes = objs.wk2
 		entry.crimefile = "NIJ2017_MAR01_MAR14-hot-"
 	  elsif entry.timeframe == "1MO"
+		entry.crimes = objs.mo1
 		entry.crimefile = "NIJ2017_MAR01_MAR31-hot-"
 	  elsif entry.timeframe == "2MO"
+		entry.crimes = objs.mo2
 		entry.crimefile = "NIJ2017_MAR01_APR30-hot-"
 	  elsif entry.timeframe == "3MO"
+		entry.crimes = objs.mo3
 		entry.crimefile = "NIJ2017_MAR01_MAYR31-hot-"
 	  end
+	  if entry.crimetype =~ /acfs/i
+		entry.crimes = entry.crimes.acfs
+	  elsif entry.crimetype =~ /sc/i
+		entry.crimes = entry.crimes.sc
+	  elsif entry.crimetype =~ /burg/i
+		entry.crimes = entry.crimes.burg
+	  elsif entry.crimetype =~ /toa/i
+		entry.crimes = entry.crimes.toa
+	  end
+
 	  entry.crimefile += entry.crimetype + ".csv"
 	  entry.crimefile = File.join("nij_challenge", entry.crimefile)
 	  entries.push(entry)
-	  if File.exists?(entry.crimefile)
-		hotspots = SHP::Shapefile.read_hotspots(filename)
-		entry.score = Crimes.pai_score(hotspots, entry.crimefile, SHP::Shapefile.total_area(entry.shapefile), true)
+	}
+	entries
+  end
+
+  def Crimes.validate_entries
+	entries = Crimes.get_entries
+	entries.each { |e|
+	  puts "  " + File.basename(e.shapefile) + ":" 
+	  if SHP::Shapefile.validates_by_nij_rules?(e.shapefile)
+		puts "PASS"
+	  end
+	  puts
+	}
+	nil
+  end
+
+  def Crimes.who_won(verbose = true, all_crimes = nil)
+	entries = []
+#	objs = Crimes.read_csv("NIJ2017_MAR01_MAYR31.csv")
+	objs = Crimes.read_csv("crimes.csv")
+	files = Dir['nij_challenge/shapefiles/*.shp']
+	files.each { |filename|
+	  re_obj = Regexp.new("(.+)_(?:ACFS|SC|toa|burg)_(?:1WK|2WK|1MO|2MO|3MO)\.shp", Regexp::IGNORECASE)
+	  re_match = re_obj.match(File.basename(filename))
+	  next if !re_match
+	  team = re_match.captures.first
+	  entry = Entry.new(team)
+	  entry.shapefile = filename
+	  entry.timeframe = File.basename(filename).slice(/...\./)[0...-1]
+	  entry.crimetype = File.basename(filename).slice(/_acfs|_sc|_toa|_burg/i).sub("_", "").downcase
+	  if entry.timeframe == "1WK"
+		entry.crimes = objs.wk1
+		entry.crimefile = "NIJ2017_MAR01_MAR07-hot-"
+	  elsif entry.timeframe == "2WK"
+		entry.crimes = objs.wk2
+		entry.crimefile = "NIJ2017_MAR01_MAR14-hot-"
+	  elsif entry.timeframe == "1MO"
+		entry.crimes = objs.mo1
+		entry.crimefile = "NIJ2017_MAR01_MAR31-hot-"
+	  elsif entry.timeframe == "2MO"
+		entry.crimes = objs.mo2
+		entry.crimefile = "NIJ2017_MAR01_APR30-hot-"
+	  elsif entry.timeframe == "3MO"
+		entry.crimes = objs.mo3
+		entry.crimefile = "NIJ2017_MAR01_MAYR31-hot-"
+	  end
+	  if entry.crimetype =~ /acfs/i
+		entry.crimes = entry.crimes.acfs
+	  elsif entry.crimetype =~ /sc/i
+		entry.crimes = entry.crimes.sc
+	  elsif entry.crimetype =~ /burg/i
+		entry.crimes = entry.crimes.burg
+	  elsif entry.crimetype =~ /toa/i
+		entry.crimes = entry.crimes.toa
+	  end
+
+	  entry.crimefile += entry.crimetype + ".csv"
+	  entry.crimefile = File.join("nij_challenge", entry.crimefile)
+	  entries.push(entry)
+
+	  hotspots = SHP::Shapefile.read_hotspots(entry.shapefile)
+	  if !entry.crimes.empty?
+		entry.score = Crimes.pai_score(hotspots, entry.crimes, SHP::Shapefile.total_area(entry.shapefile), false)
+		entry.pai_obj = $last_pai
+	  elsif File.exists?(entry.crimefile)
+		entry.score = Crimes.pai_score(hotspots, entry.crimefile, SHP::Shapefile.total_area(entry.shapefile), false)
+		entry.pai_obj = $last_pai
 #		puts "%s (%s %s): %f" % [ entry.team, entry.crimetype, entry.timeframe, entry.score ]
 	  end
 	}
-	entries = entries.find_all { |e| e.score != nil and e.score.to_s != "NaN" }
-	if verbose
-	  %w[ acfs sc toa burg ].each { |ctype|
-		%w[ 1WK 2WK 1MO 2MO 3MO ].each { |tframe|
-		  puts "---- %s %s:" % [ ctype.upcase, tframe ] if verbose
-		  begin
-			entries.find_all { |e| e.crimetype == ctype and e.timeframe == tframe }.sort.reverse.each { |e|
-			  puts "%20.20s (%s %s): %f" % [ e.team, e.crimetype, e.timeframe, e.score ] if verbose
-		  }
-		  rescue
-			$stderr.puts $!
-		  end
-		  puts
-		}
-	  }
-	end
+#	bad = entries.find_all { |e| e.score == nil or e.score.to_s == "NaN" }
+#	bad.each { |e| puts "Entry was present but eliminated because scoring them resulted in NaN (arithmetic error, i.e. Not a Number):\n  #{e.to_s}\n" }
+	puts "-----------------------------"
+	puts "COMPLIANCE WITH CONTEST RULES"
+	puts "-----------------------------"
+	puts
 	entries.each { |e|
 	  puts sprintf("%s (%s %s) tests:", e.team, e.crimetype, e.timeframe) if verbose
 	  #"%20.20s tests:" % e.team
@@ -261,12 +451,53 @@ module Crimes
 	  total_area_pass = total_area <= TOTAL_SQUARE_FEET + TOTAL_SQUARE_FEET_WIGGLE_ROOM and total_area >= TOTAL_SQUARE_FEET - TOTAL_SQUARE_FEET_WIGGLE_ROOM
 
 	  max_cell_area = SHP::Shapefile.max_cell_area(e.shapefile)
-	  max_cell_area_pass = max_cell_area <= 360000 #and max_cell_area >= 62500
+	  max_cell_area_pass = max_cell_area < 360000 #and max_cell_area >= 62500
 
-	  puts " forecasted area: " + (fc_area_pass ? "PASS" : "!! FAIL !!  " + fc_area.to_s) if verbose
-	  puts " total map area:  " + (total_area_pass ? "PASS" : "!! FAIL !!  " + total_area.to_s) if verbose
-	  puts " map cell sizes:  " + (max_cell_area_pass ? "PASS" : "!! FAIL !!  " + max_cell_area.to_s) if verbose
+	  cell_layout_pass = SHP::Shapefile.validate_internal_cell_size(e.shapefile)
+
+	  puts " forecasted area:    " + (fc_area_pass ? "PASS" : "!! FAIL !!  " + fc_area.to_s) if verbose
+	  puts " total map area:     " + (total_area_pass ? "PASS" : "!! FAIL !!  " + total_area.to_s) if verbose
+	  puts " cell layout:        " + (!cell_layout_pass ? "PASS" : "!! FAIL !!  " + cell_layout_pass.to_s) if verbose
+#	  puts " attributes correct: " 
 	  puts if verbose
+	  if !fc_area_pass or !total_area_pass or !max_cell_area_pass
+		e.disqualified = true
+	  end
+	}
+	entries = entries.find_all { |e| e.score != nil and e.score.to_s != "NaN" }
+	leaderboard = Hash.new
+	if verbose
+	  puts "\n"
+	  puts "------------------------"
+	  puts "PAI SCORES BY TIME FRAME"
+	  puts "------------------------"
+	  puts "  * An asterisk indicates the entry failed to comply with contest submission requirements"
+	  puts
+	  %w[ acfs sc toa burg ].each { |ctype|
+		%w[ 1WK 2WK 1MO 2MO 3MO ].each { |tframe|
+		  puts "\n%s %s:\n" % [ ctype.upcase, tframe ] if verbose
+		  begin
+			entries.find_all { |e| e.crimetype == ctype and e.timeframe == tframe }.sort.reverse.each_with_index { |e, idx|
+			  puts e.to_s if verbose #"%20.20s (%s %s): %f" % [ e.team, e.crimetype, e.timeframe, e.score ] if verbose
+			  next if idx != 0 or e.disqualified
+			  if leaderboard[e.team]
+				leaderboard[e.team] += 1
+			  else
+				leaderboard[e.team] = 1
+			  end
+		  }
+		  rescue
+			$stderr.puts $!
+		  end
+		}
+	  }
+	end
+	puts "\n\n\n"
+	puts "-------------------------------------"
+	puts "NUMBER OF CATEGORIES WON BY EACH TEAM"
+	puts "-------------------------------------"
+	leaderboard.each { |name, points|
+	  puts sprintf(" %20.20s %i ", name, points)
 	}
 	entries
   end
@@ -356,8 +587,18 @@ end
 class Crime
   attr_accessor :x, :y, :date, :type
   def initialize(x, y, date, type)
-	re = date.match(/(\d?\d)\/(\d?\d)\/(\d\d\d\d)/)
-	@x, @y, @date, @type = x.to_i, y.to_i, Time.parse(re[2] + "/" + re[1] + "/" + re[3]), type
+	begin
+	  re = date.match(/(\d?\d)\/(\d?\d)\/(\d\d\d\d)/)
+	  if re.nil?
+		@x, @y, @date, @type = x.to_f, y.to_f, Time.parse(date), type
+	  else
+		@x, @y, @date, @type = x.to_f, y.to_f, Time.parse(re[2] + "/" + re[1] + "/" + re[3]), type
+	  end
+	rescue
+	  $stderr.puts($!)
+	  $stderr.puts($!.backtrace.first)
+	  $stderr.puts re.inspect
+	end
   end
 
   def Crime.read_csv(filename)
@@ -368,15 +609,16 @@ class Crime
 	ret = Array.new
 	data = File.readlines(filename).find_all { |line| line !~ /^OTHER/ }.join
 	csv = CSV.parse(data)
-	csv[0..-1].each { |elem|
-	  if elem[0] =~ /^STREET/
+	if csv.first.join(",") =~ /CATEGORY/i
+	  csv = csv[1..-1]
+	end
+	csv.each { |elem|
+	  if elem[0] =~ /^STREET/i
 		type = SC
-	  elsif elem[0] =~ /^VEHICLE/
+	  elsif elem[0] =~ /^MOTOR/i
 		type = TOA
-	  elsif elem[0] =~ /^BURGLARY/
+	  elsif elem[0] =~ /^BURGLARY/i
 		type = Burg
-	  elsif elem[0] =~ /^CATEGORY/
-		next
 	  else
 		type = CFS
 	  end
@@ -420,6 +662,8 @@ end
 
 
 if $0 == __FILE__
-  Crimes.who_won
+#  crimes = Crimes.read_csv("NIJ2017_MAR01_MAYR31.csv")
+  crimes = Crimes.read_csv("crimes.csv")
+  Crimes.who_won(true, crimes)
   #Crimes.pai_score_all_from_shapefiles
 end

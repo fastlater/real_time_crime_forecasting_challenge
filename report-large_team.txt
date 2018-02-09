@@ -1,0 +1,284 @@
+Codilime (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Codilime (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Codilime (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  380279.23110246053
+
+Codilime (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  380279.23110246053
+
+Codilime (acfs 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Codilime (burg 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  485378.4331189394
+
+Codilime (sc 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+Codilime (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+ConduentPublicSafetySolutions (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.00000858307
+
+DataikuInc (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+DataikuInc (toa 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+GARANTANALYTICS (sc 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+GRIER (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+GRIER (toa 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+GRIER (toa 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+GRIER (toa 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+IMPAQ (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.0000009537
+
+IMPAQ (burg 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   !! FAIL !!  360000.0000009537
+
+JeremyHeffner (burg 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+JeremyHeffner (sc 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+MARUANALSHEDIVAT (toa 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (acfs 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (acfs 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (burg 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (burg 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (sc 1MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (sc 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (sc 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+PASDA (toa 2MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (acfs 1MO) tests:
+ forecasted area: PASS
+ total map area:  !! FAIL !!  4119502451.4091005
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (acfs 1WK) tests:
+ forecasted area: PASS
+ total map area:  !! FAIL !!  4118506016.896387
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (acfs 3MO) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (burg 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (burg 2WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (sc 2WK) tests:
+ forecasted area: PASS
+ total map area:  !! FAIL !!  4119043229.9811935
+ max cell size:   PASS
+
+TEAM_KERNEL_GLITCHES (toa 1WK) tests:
+ forecasted area: PASS
+ total map area:  PASS
+ max cell size:   PASS
+
+ACFS 1WK:
+---------
+            Codilime (acfs 1WK): 82.0151222531 [hits: 101, num_crimes: 00723, forecast_area: 7013664.000000, total_map_area: 4117710564.562282] {Codilime_ACFS_1WK.shp}
+* TEAM_KERNEL_GLITCH (acfs 1WK): 66.7440526355 [hits: 105, num_crimes: 00723, forecast_area: 8961446.853229, total_map_area: 4118506016.896387] {TEAM_KERNEL_GLITCHES_ACFS_1WK.shp}
+
+ACFS 2WK:
+---------
+               PASDA (acfs 2WK): 116.0873446955 [hits: 273, num_crimes: 01384, forecast_area: 6996982.154899, total_map_area: 4117836387.082452] {PASDA_ACFS_2WK.shp}
+*           Codilime (acfs 2WK): 56.6219990460 [hits: 137, num_crimes: 01384, forecast_area: 7198680.000000, total_map_area: 4117689448.872957] {Codilime_ACFS_2WK.shp}
+
+ACFS 1MO:
+---------
+* TEAM_KERNEL_GLITCH (acfs 1MO): 84.0885313920 [hits: 523, num_crimes: 03054, forecast_area: 8389588.393856, total_map_area: 4119502451.409101] {TEAM_KERNEL_GLITCHES_ACFS_1MO.shp}
+            Codilime (acfs 1MO): 77.8568539314 [hits: 405, num_crimes: 03054, forecast_area: 7013664.000000, total_map_area: 4117710564.562282] {Codilime_ACFS_1MO.shp}
+
+ACFS 2MO:
+---------
+               PASDA (acfs 2MO): 102.7060407742 [hits: 1671, num_crimes: 09575, forecast_area: 6996982.154899, total_map_area: 4117836387.082452] {PASDA_ACFS_2MO.shp}
+*           Codilime (acfs 2MO): 51.7344492955 [hits: 866, num_crimes: 09575, forecast_area: 7198680.000000, total_map_area: 4117689448.872957] {Codilime_ACFS_2MO.shp}
+
+ACFS 3MO:
+---------
+            Codilime (acfs 3MO): 75.2957466605 [hits: 1228, num_crimes: 09575, forecast_area: 7013664.000000, total_map_area: 4117710564.562282] {Codilime_ACFS_3MO.shp}
+TEAM_KERNEL_GLITCHES (acfs 3MO): 48.0085588320 [hits: 834, num_crimes: 09575, forecast_area: 7471314.107883, total_map_area: 4118019477.550449] {TEAM_KERNEL_GLITCHES_ACFS_3MO.shp}
+
+SC 1WK:
+---------
+       JeremyHeffner (sc 1WK): 93.1798975225 [hits: 104, num_crimes: 00630, forecast_area: 7295156.929662, total_map_area: 4117788887.723163] {JeremyHeffner_SC_1WK.shp}
+     GARANTANALYTICS (sc 1WK): 60.5079352619 [hits: 070, num_crimes: 00630, forecast_area: 7562500.000000, total_map_area: 4118321343.760244] {GARANTANALYTICS_SC_1WK.shp}
+
+SC 2WK:
+---------
+               PASDA (sc 2WK): 139.5651690472 [hits: 286, num_crimes: 01206, forecast_area: 6996982.154897, total_map_area: 4117836387.082452] {PASDA_SC_2WK.shp}
+* TEAM_KERNEL_GLITCH (sc 2WK): 95.3616327878 [hits: 210, num_crimes: 01206, forecast_area: 7521330.252126, total_map_area: 4119043229.981194] {TEAM_KERNEL_GLITCHES_SC_2WK.shp}
+
+SC 1MO:
+---------
+               PASDA (sc 1MO): 129.1009165006 [hits: 589, num_crimes: 02685, forecast_area: 6996982.154897, total_map_area: 4117836387.082452] {PASDA_SC_1MO.shp}
+* ConduentPublicSafe (sc 1MO): 60.5842542048 [hits: 282, num_crimes: 02685, forecast_area: 7139061.712950, total_map_area: 4118092372.263008] {ConduentPublicSafetySolutions_SC_1MO.shp}
+
+SC 2MO:
+---------
+               PASDA (sc 2MO): 125.1955572390 [hits: 1808, num_crimes: 08499, forecast_area: 6996982.154897, total_map_area: 4117836387.082452] {PASDA_SC_2MO.shp}
+            Codilime (sc 2MO): 45.9393754864 [hits: 1024, num_crimes: 08499, forecast_area: 10797600.000000, total_map_area: 4116993624.405481] {Codilime_SC_2MO.shp}
+
+SC 3MO:
+---------
+               PASDA (sc 3MO): 125.1955572390 [hits: 1808, num_crimes: 08499, forecast_area: 6996982.154897, total_map_area: 4117836387.082452] {PASDA_SC_3MO.shp}
+            Codilime (sc 3MO): 46.5952986817 [hits: 1004, num_crimes: 08499, forecast_area: 10437680.000000, total_map_area: 4116993624.405481] {Codilime_SC_3MO.shp}
+
+TOA 1WK:
+---------
+               GRIER (toa 1WK): 32.2872064457 [hits: 004, num_crimes: 00072, forecast_area: 7085378.693659, total_map_area: 4117807523.304117] {GRIER_TOA_1WK.shp}
+TEAM_KERNEL_GLITCHES (toa 1WK): 21.3310924288 [hits: 007, num_crimes: 00072, forecast_area: 18768029.136291, total_map_area: 4117809231.898142] {TEAM_KERNEL_GLITCHES_TOA_1WK.shp}
+
+TOA 2WK:
+---------
+               GRIER (toa 2WK): 64.0996010319 [hits: 015, num_crimes: 00136, forecast_area: 7085378.693659, total_map_area: 4117807523.304117] {GRIER_TOA_2WK.shp}
+
+TOA 1MO:
+---------
+               GRIER (toa 1MO): 46.4935772818 [hits: 022, num_crimes: 00275, forecast_area: 7085378.693659, total_map_area: 4117807523.304117] {GRIER_TOA_1MO.shp}
+    MARUANALSHEDIVAT (toa 1MO): 31.9816050081 [hits: 015, num_crimes: 00275, forecast_area: 7022878.693745, total_map_area: 4117720427.392056] {MARUANALSHEDIVAT_TOA_1MO.shp}
+
+TOA 2MO:
+---------
+               PASDA (toa 2MO): 43.8546293987 [hits: 060, num_crimes: 00807, forecast_area: 6981272.216247, total_map_area: 4117866872.674503] {PASDA_TOA_2MO.shp}
+          DataikuInc (toa 2MO): 19.7738000886 [hits: 031, num_crimes: 00807, forecast_area: 7999999.999956, total_map_area: 4118053334.552965] {DataikuInc_TOA_2MO.shp}
+
+TOA 3MO:
+---------
+               GRIER (toa 3MO): 41.0491620982 [hits: 057, num_crimes: 00807, forecast_area: 7085378.693659, total_map_area: 4117807523.304117] {GRIER_TOA_3MO.shp}
+          DataikuInc (toa 3MO): 24.2388517212 [hits: 038, num_crimes: 00807, forecast_area: 8000000.000050, total_map_area: 4118053334.552965] {DataikuInc_TOA_3MO.shp}
+
+BURG 1WK:
+---------
+TEAM_KERNEL_GLITCHES (burg 1WK): 29.2164838733 [hits: 003, num_crimes: 00021, forecast_area: 20134471.493947, total_map_area: 4117809231.898142] {TEAM_KERNEL_GLITCHES_BURG_1WK.shp}
+
+BURG 2WK:
+---------
+TEAM_KERNEL_GLITCHES (burg 2WK): 23.6090316853 [hits: 005, num_crimes: 00042, forecast_area: 20763892.025864, total_map_area: 4117809231.898142] {TEAM_KERNEL_GLITCHES_BURG_2WK.shp}
+
+BURG 1MO:
+---------
+               PASDA (burg 1MO): 25.0318748655 [hits: 004, num_crimes: 00094, forecast_area: 6999999.999992, total_map_area: 4117743415.366381] {PASDA_Burg_1MO.shp}
+*              IMPAQ (burg 1MO): 12.1675887132 [hits: 002, num_crimes: 00094, forecast_area: 7200000.000000, total_map_area: 4117512020.544580] {IMPAQ_Burg_1MO.shp}
+
+BURG 2MO:
+---------
+               PASDA (burg 2MO): 19.6811952939 [hits: 009, num_crimes: 00269, forecast_area: 6999999.999992, total_map_area: 4117743415.366381] {PASDA_Burg_2MO.shp}
+*              IMPAQ (burg 2MO): 4.2518711488 [hits: 002, num_crimes: 00269, forecast_area: 7200000.000000, total_map_area: 4117512020.544580] {IMPAQ_Burg_2MO.shp}
+
+BURG 3MO:
+---------
+       JeremyHeffner (burg 3MO): 18.9130531853 [hits: 009, num_crimes: 00269, forecast_area: 7284381.167194, total_map_area: 4117788887.723163] {JeremyHeffner_Burg_3MO.shp}
+*           Codilime (burg 3MO): 5.9719862435 [hits: 008, num_crimes: 00269, forecast_area: 20504610.000000, total_map_area: 4117490492.518675] {Codilime_Burg_3MO.shp}
+
+
+ * An asterisk indicates the entry failed to comply with contest submission requirements

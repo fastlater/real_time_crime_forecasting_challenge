@@ -10,7 +10,9 @@ module SHP
 	  f = SHP::Shapefile.open(name, "rb")
 	  ret = Array.new
 	  f.get_info()[:number_of_entities].times { |n|
-		ret.push(f.read_object(n))
+		cell = f.read_object(n)
+		cell.basefname = name
+		ret.push(cell)
 	  }
 	  f.close()
 	  ret
@@ -119,44 +121,154 @@ module SHP
 	  end
 	  file.close()
 	end
+
+	def Shapefile.validate(filename)
+	  Shapefile.validates_by_nij_rules?(filename)
+	end
+
+	def Shapefile.validates_by_nij_rules?(filename)
+	  failures = []
+	  tests = %w[ validate_total_area
+		  validate_forecast_area
+		  validate_internal_cell_size
+		  validate_polygons
+	  ]
+		
+	  tests.each { |str|
+		ret = Shapefile.send(str.to_sym, filename)
+		if ret
+		  failures.push(str + " (#{ret.to_s})")
+		end
+	  }
+
+	  failures.each { |s| print "!! FAILED: " + s + " !!\n" }
+	  failures.empty?
+	end
+
+	def Shapefile.validate_total_area_by_shpdata(filename)
+	  output = `shpdata #{filename.to_s}`
+	  areas = output.split.collect { |line| re = /Area = ([^\s\n]+)/.match(line); if !re then nil else re.captures.first end }.compact
+	  area = 0
+	  areas.each { |a| area += a.to_f }
+
+	  total_area = area
+#	  total_area = Shapefile.total_area(filename)
+	  total_area_pass = total_area <= TOTAL_SQUARE_FEET + TOTAL_SQUARE_FEET_WIGGLE_ROOM and total_area >= TOTAL_SQUARE_FEET - TOTAL_SQUARE_FEET_WIGGLE_ROOM
+	  if total_area_pass
+		nil
+	  else
+		total_area
+	  end
+	end
+
+	def Shapefile.validate_total_area(filename)
+	  total_area = Shapefile.total_area(filename)
+	  total_area_pass = total_area <= TOTAL_SQUARE_FEET + TOTAL_SQUARE_FEET_WIGGLE_ROOM and total_area >= TOTAL_SQUARE_FEET - TOTAL_SQUARE_FEET_WIGGLE_ROOM
+	  if total_area_pass
+		nil
+	  else
+		total_area
+	  end
+	end
+
+	def Shapefile.validate_forecast_area(filename)
+	  total_area = Shapefile.total_area_hotspots(filename)
+	  max_area = Shapefile.max_cell_area(filename)
+
+	  if total_area > MINIMUM_SQUARE_FEET * 3
+		total_area
+	  elsif total_area < MINIMUM_SQUARE_FEET
+		total_area
+	  else
+		nil
+	  end
+	end
+
+	def Shapefile.validate_polygons(filename)
+	  cells = Shapefile.read(filename)
+	  cells.any? { |c| c.get_shape_type != SHP::SHPT_POLYGON }
+	end
+
+	def Shapefile.validate_internal_cell_size(filename)
+	  cells = Shapefile.read(filename)
+	  internal_cells = []
+	  border_cells = []
+	  
+	  min, max = cells.minmax_by { |c| c.area }
+	  max_area = max.area
+
+	  if max_area > 360000 or max_area < 62500
+		return max_area
+	  end
+
+	  while !cells.empty?
+		cell = cells.pop
+		if cell.area == max_area
+		  internal_cells.push(cell)
+		else
+		  border_cells.push(cell)
+		end
+	  end
+
+	  return nil
+	end
+
   end
 
   class ShapeObject
+	include Enumerable
+	attr_accessor :basefname
+
 	def ShapeObject.hotspots_from_csv(filename)
 	  Crimes.hotspots_from_csv(filename)
 	end
 
+	def <=>(other)
+	  self.area <=> other.area
+	end
+
+	def get_attribute(attrib, dbf_file = @basefname)
+	  begin
+		#dbf_file.kind_of?(DBF) ? nil : dbf_file = DBF.open(dbf_file, "rb")
+		dbf_file = DBF.open(dbf_file, "rb")
+		idx = dbf_file.get_field_index(attrib.to_s)
+		raise Exception.new("bad field: %s" % attrib.to_s)
+
+		if dbf_file.is_attribute_null(self.get_shape_id, idx)
+		  return nil
+		end
+
+		if field_type == 'N'
+		  return dbf_file.read_integer_attribute(self.get_shape_id, hotspot_idx)
+		elsif field_type == 'F'
+		  return dbf_file.read_double_attribute(self.get_shape_id, hotspot_idx)
+		else
+		  return dbf_file.read_string_attribute(self.get_shape_id, hotspot_idx)
+		end
+
+	  rescue
+		puts dbf_file
+		puts $!.to_s, $!.backtrace
+	  ensure
+		dbf_file.close()
+	  end
+	end
+
 	def hotspot?(filename)
 	  begin
-		filename.kind_of?(DBF) ? dbf_file = filename : dbf_file = DBF.open(filename, "rb+")
+		filename.kind_of?(DBF) ? dbf_file = filename : dbf_file = DBF.open(filename, "rb")
 		hotspot_idx = dbf_file.get_field_index("hotspot")
 		result = dbf_file.read_integer_attribute(self.get_shape_id, hotspot_idx)
-		return result == 1
+		result.to_i == 1
 	  ensure
 		dbf_file.close() if !filename.kind_of?(DBF)
 	  end
 	end
 
 	def encloses(sorted)
-=begin
-	  i = 0
-	  enclosed = Array.new
-	  while i < sorted.size
-		x = sorted[i].first
-		y = sorted[i].last
-		if x >= get_x_min and x <= get_x_max and y >= get_y_min and y <= get_y_max
-		  enclosed.push(sorted[i])
-#		  sorted.delete_at(i)
-		elsif x > get_x_max and y > get_y_max
-		  break
-		end
-		i += 1
-	  end
-=end
 	  enclosed = sorted.find_all { |x, y|
 		x >= get_x_min and x <= get_x_max and y >= get_y_min and y <= get_y_max
 	  }
-#	  enclosed.each { |el| sorted.delete(el) }
 	  enclosed
 	end
 
