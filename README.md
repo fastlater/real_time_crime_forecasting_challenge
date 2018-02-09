@@ -16,6 +16,12 @@ I firmly believe the National Institute of Justice owes me $50,000 to $100,000 d
 So they get away with not paying me, at the expense of my sticking a fully open source, reviewable contradiction of their numbers up somewhere.
 
 
+Errata
+======
+- The area formula used is only accurate for polygons which do not have edges that intersect.
+- CCC didn't score 0, but they mistakenly named their hotspots "hotpsots" so the report shown here is inaccurate.  They did win that category, if you ignore the typo.
+
+
 Dependencies
 ============
 - The directory structure.
