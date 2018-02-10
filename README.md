@@ -18,9 +18,9 @@ So they get away with not paying me, at the expense of my sticking a fully open 
 
 Errata
 ======
-- The area formula used is only accurate for polygons which do not have edges that intersect.
-- CCC didn't score 0, but they mistakenly named their hotspots "hotpsots" so the report shown here is inaccurate.  They did win that category, if you ignore the typo.
-- The reports are based on files that were downloaded on or about September 1, 2017.
+- The area formula used is only accurate for polygons which do not have edges that intersect.  Due to the constraints on submissions (i.e. the contest rules), this particular "flaw" in the algorithm is a handy indication that the submission's map should be inspected more thoroughly to verify proper construction of the internal (non-border) cells (they were required to be of identical area, perimeter, and geometric orientation.)  In short, even entries that failed a specific test could still be in accordance with all the rules.
+- Which leads me to team CCC in the small business category: they didn't score 0, but they mistakenly named their "hotspot" fields "hotpsots" -- obviously the National Institute of Justice chose to correct their typo, which is as it should be IMHO.  They're people, not programs: they know what the team meant, regardless of what the team actually said.
+- The scores for the other teams are based on files that were retrieved from the NIJ site on or about September 1, 2017; any changes after that date will not be reflected here.  Ever.  I'm too busy and don't care enough about protecting the reputation of an agency that owes me six figures I'll never receive (sorry, but it's true..)
 
 Dependencies
 ============
